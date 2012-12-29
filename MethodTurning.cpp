@@ -37,21 +37,3 @@ void LeftShift(char* str,int strLength,int k)
     Rotate(middlePtr,str + strLength - 1);
     Rotate(str,str + strLength - 1);
 }
-
-int main()
-{
-    char *testString = (char*) malloc(sizeof(char) * 256);
-    int shiftNum = 0;
-    assert(testString != NULL);
-
-    cin >> testString >> shiftNum;
-
-    LeftShift(testString,strlen(testString),shiftNum);
-
-    cout<<testString<<endl;
-
-    free(testString);
-    testString = NULL;
-
-    return 0;
-}
