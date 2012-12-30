@@ -14,6 +14,7 @@ int main()
     string changedString;
     int shiftNum = 0;
     int lineNum = 0;
+    int lineNumTmp = 0;
 
     ifstream infile(filename.c_str(),ios_base::in);
 
@@ -24,13 +25,13 @@ int main()
     }
     
     infile >> lineNum;
-    
+    lineNumTmp = lineNum; 
     cout<<lineNum<<endl;
 
     char* cOriginalString = NULL;
     char* cChangedString = NULL;
 
-    while(lineNum--)
+    while(lineNumTmp--)
     {
 	infile>>originalString>>shiftNum>>changedString;
 	
@@ -49,7 +50,7 @@ int main()
 
 	if(strcmp(cOriginalString,cChangedString) != 0)
 	{
-	    cout<<"test error;num is:"<<lineNum<<endl;
+	    cout<<"test error;num is:"<<lineNum - lineNumTmp<<endl;
 
 	    delete[] cOriginalString;
 	    delete[] cChangedString;
