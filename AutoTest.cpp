@@ -49,7 +49,7 @@ int main()
 
 	if(strcmp(cOriginalString,cChangedString) != 0)
 	{
-	    cout<<"test error;num is"<<lineNum<<endl;
+	    cout<<"test error;num is:"<<lineNum<<endl;
 
 	    delete[] cOriginalString;
 	    delete[] cChangedString;
